@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="Theme.863Android框架" parent="Theme.MaterialComponents.Light" />
+
+    <style name="Theme.863Android框架.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.863Android框架.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.863Android框架.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

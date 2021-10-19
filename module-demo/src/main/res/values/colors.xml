@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_icon_color">#7C7C7C</color>
+    <!--彩虹-->
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="navy">#00FFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple">#8B00FF</color>
+</resources>

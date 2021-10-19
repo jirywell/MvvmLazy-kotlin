@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.rui.demo.ui.fragment.DialogFragment.Presenter" />
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.DialogViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.msgClick()}"
+                android:text="消息弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.inputDialogClick()}"
+                android:text="显示带输入框的Confirm弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.loadingDialogClick()}"
+                android:text="显示加载弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.ruffian.library.widget.RTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp35"
+                  android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{() -> presenter.hintDialogClick(1)}"
+                    android:text="完成"
+                    android:textColor="@android:color/white"
+                    app:background_normal="@color/colorAccent"
+                    app:corner_radius="15dp"
+                    app:ripple="true"
+                    app:ripple_color="@color/red"
+                    app:ripple_mask_style="normal" />
+                <com.ruffian.library.widget.RTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{() -> presenter.hintDialogClick(2)}"
+                    android:text="错误"
+                    android:textColor="@android:color/white"
+                    app:background_normal="@color/colorAccent"
+                    app:corner_radius="15dp"
+                    app:ripple="true"
+                    app:ripple_color="@color/red"
+                    app:ripple_mask_style="normal" />
+                <com.ruffian.library.widget.RTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{() -> presenter.hintDialogClick(3)}"
+                    android:text="警告"
+                    android:textColor="@android:color/white"
+                    app:background_normal="@color/colorAccent"
+                    app:corner_radius="15dp"
+                    app:ripple="true"
+                    app:ripple_color="@color/red"
+                    app:ripple_mask_style="normal" />
+            </LinearLayout>
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{(v) -> presenter.spinnerDialogClick(v)}"
+                android:text="下拉弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.commentDialogClick()}"
+                android:text="底部评论弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.btmListDialogClick()}"
+                android:text="显示Bottom类型的List弹窗"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.btmListCheckDialogClick()}"
+                android:text="显示Bottom类型的List弹窗(带选中效果)"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.dateDialogClick()}"
+                android:text="时间选择"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.cityDialogClick()}"
+                android:text="城市选择"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{() -> presenter.norListDialogClick()}"
+                android:text="通用列表样式"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

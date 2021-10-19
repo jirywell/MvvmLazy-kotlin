@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<paths>
+    <external-path
+        name="files_root"
+        path="Android/data/com.rui.book/" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+</paths>
+</resources>

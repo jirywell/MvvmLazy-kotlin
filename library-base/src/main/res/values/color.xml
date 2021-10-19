@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="themeColor">#2D6BF5</color>
+    <color name="themeRedColor">#fffe715f</color>
+
+    <color name="transparent_40">#20000000</color>  <!-- 透明色 40%-->
+    <color name="audio_edit_stroke_color">#fcb701</color>
+    <color name="singleColor">#FFF56C52</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#2D6BF5</color>
+    <color name="textColor">#333333</color>
+    <color name="textColorCancel">#373737</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="textColorRed">#FE715F</color>
+    <color name="singleColorRed">#F56C52</color>
+    <color name="textColorHint">#999999</color>
+    <color name="appColor">#FF2041</color>
+    <color name="appBackColor">#F4F3F3</color>
+    <color name="viewLineColor">#E0E0E0</color>
+    <color name="black">#333333</color>
+    <color name="gray">#959595</color>
+    <color name="gray1">#DBD8D8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="smoke_white">#F5F5F5</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="apptheme">#FF2041</color>
+    <!--red-->
+    <color name="red">#dd0000</color>
+    <!--Pink-->
+    <color name="pink">#FFC0CB</color>
+
+    <!--purple-->
+    <color name="purple">#6844d3</color>
+
+    <color name="green">#008000</color>
+    <color name="mineGreen">#1AB86C</color>
+    <color name="blue">#2D6BF5</color>
+    <color name="orange">#FFA500</color>
+    <color name="transparent">#00000000</color><!--透明色-->
+    <color name="font_black">#333333</color>
+    <color name="font_blue">#5263FA</color>
+    <color name="font_gray">#666666</color>
+    <color name="bg_gray">#F8F8F9</color>
+    <color name="btn_bg_blue">#FF2196F3</color>
+    <color name="share_type_bg">#F7F8FA</color>
+    <color name="color_bb">#bbbbbb</color>
+    <color name="color_55">#555555</color>
+
+
+    <color name="text_def">#ff666666</color>
+    <color name="text_major">#ff333333</color>
+    <color name="text_minor">#ff999999</color>
+    <color name="divider">#E6E6E6</color>
+    <color name="login_et_bg">#F2F2F2</color>
+    <color name="view_line">#0D000000</color>
+    <color name="discover_city_select_side_bar_bg_blue">#FF5091F5</color>
+    <color name="mine_item_payment_orange_red">#FF0000</color>
+    <color name="mine_suggest_edt_bg_gray">#F8F8F8</color>
+
+
+    <!---->
+    <color name="indicator_text_color">#272727</color>
+    <color name="color_ff27">#ff272727</color>
+    <color name="color_01">#FFFFB701</color>
+    <color name="color_1a">#ff1a1a1a</color>
+    <color name="color_27">#FF272727</color>
+    <color name="color_39">#393939</color>
+    <color name="color_f7">#fff7f7f7</color>
+    <color name="color_ff">#FFFFFFFF</color>
+    <color name="color_D9">#FFFFF3D9</color>
+    <color name="color_2727">#272727</color>
+    <color name="color_f9">#f6f7f9</color>
+    <color name="color_e6">#e6e6e6</color>
+    <color name="color_f3">#fff3f3f3</color>
+    <color name="color_f7f7">#fff7f7f7</color>
+    <color name="color_e6e6">#ffe6e6e6</color>
+    <color name="color_00">#000000</color>
+    <color name="color_aa">#aaaaaa</color>
+    <color name="color_66">#FF666666</color>
+    <color name="color_99">#ff999999</color>
+    <color name="color_33">#ff333333</color>
+    <color name="color_ad">#ffadadad</color>
+    <color name="color_b100">#ffb100</color>
+    <color name="color_ffb1">#ffffb100</color>
+    <color name="color_6666">#ff666666</color>
+    <color name="color_ffe6">#ffe6e6e6</color>
+    <color name="color_trans2">#55000000</color>
+    <color name="color_9c">#9c9c9c</color>
+    <color name="color_c9">#c9c9c9</color>
+    <color name="color_f0300a">#f0300a</color>
+    <color name="color_c19966">#c19966</color>
+    <color name="color_fe">#fffdfffe</color>
+    <color name="color_fe2">#8Cfdfffe</color>
+    <color name="color_default">#9c9c9c</color>
+    <color name="color_tran_default">#779c9c9c</color>
+    <color name="color_tran_30">#4d000000</color><!--    30%透明度-->
+    <color name="color_tran_50">#80000000</color><!--    50%透明度-->
+</resources>

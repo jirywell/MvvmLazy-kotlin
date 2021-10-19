@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.ListViewModel" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->viewModel.changeType(1)}"
+                android:text="线性布局"
+                android:textSize="@dimen/sp20" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->viewModel.changeType(2)}"
+                android:text="网格布局"
+                android:textSize="@dimen/sp20" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v->viewModel.changeType(3)}"
+                android:text="瀑布流布局"
+                android:textSize="@dimen/sp20" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.lineAdapter}"
+                layoutManager="@{LayoutManagers.linear()}"
+                lineManager="@{LineManagers.divider(@color/divider,1)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.type==1?View.VISIBLE:View.GONE}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.grideAdapter}"
+                layoutManager="@{LayoutManagers.grid(3)}"
+                lineManager="@{LineManagers.divider(@color/divider,10)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.type==2?View.VISIBLE:View.GONE}" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                bindAdapter="@{viewModel.staggeredAdapter}"
+                layoutManager="@{LayoutManagers.staggeredGrid(3,LayoutManagers.VERTICAL)}"
+                lineManager="@{LineManagers.staggeredDivider(@color/divider,10)}"
+                setNestedScrollingEnabled="@{false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.type==3?View.VISIBLE:View.GONE}" />
+        </FrameLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                onClickCommand="@{viewModel.clickCommand}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击事件" />
+
+            <CheckBox
+                onCheckedChangedCommand="@{viewModel.checkCommand}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp20"
+                android:text="选择框" />
+
+            <Switch
+                onSwitchChangeCommand="@{viewModel.swichCommand}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp20"
+                android:text="开关" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="下拉框" />
+
+       <Spinner
+            itemValues="@{viewModel.data}"
+            onItemSelectedCommand="@{viewModel.selectCommand}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="图片加载" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="horizontal">
+
+            <ImageView
+                bindImgUrl="@{viewModel.imgUrl}"
+                placeholderRes="@{R.drawable.ic_def_loading}"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:layout_marginStart="@dimen/dp20" />
+
+            <ImageView
+                bindCircleImgUrl="@{viewModel.imgUrl}"
+                placeholderRes="@{R.drawable.ic_def_loading}"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:layout_marginStart="@dimen/dp20" />
+
+            <ImageView
+                bindCorners="@{20}"
+                bindCornersImgUrl="@{viewModel.imgUrl}"
+                placeholderRes="@{R.drawable.ic_def_loading}"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
+                android:layout_marginStart="@dimen/dp20" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.BindingViewModel" />
+
+        <import type="com.rui.demo.R" />
+    </data>
+</layout>

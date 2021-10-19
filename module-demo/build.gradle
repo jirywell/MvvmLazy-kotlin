@@ -1,0 +1,36 @@
+apply from: "../module.build.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    buildFeatures {
+        viewBinding true
+    }
+    defaultConfig {
+        //如果是独立模块，则使用当前组件的包名
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.rui.test"
+        }
+    }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "test_"
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+repositories {
+    flatDir {
+        dirs project(':library-base').file('libs')
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':library-base')
+    //组件中依赖阿里路由编译框架
+    kapt rootProject.ext.dependencies["arouter-compiler"]
+    kapt rootProject.ext.android_x["room-compiler"]
+}

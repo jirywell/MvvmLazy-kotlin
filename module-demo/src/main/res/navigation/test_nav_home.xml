@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/personal_day_think_nav"
+    app:startDestination="@id/testFragment"
+    tools:ignore="MissingDefaultResource">
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.rui.demo.ui.fragment.TestFragment"
+        android:label="HomeFragment">
+
+        <action
+            android:id="@+id/home_action_testfragment_to_bindingfragment"
+            app:destination="@id/bindingfragment" />
+        <action
+            android:id="@+id/home_action_testfragment_to_home_paginationfragment"
+            app:destination="@id/home_paginationfragment" />
+        <action
+            android:id="@+id/home_action_testfragment_to_home_listfragment"
+            app:destination="@id/home_listfragment" />
+        <action
+            android:id="@+id/home_action_testfragment_to_home_roomsamplefragment"
+            app:destination="@id/home_roomsamplefragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_mutifragment"
+            app:destination="@id/test_mutifragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_shapeviewfragment"
+            app:destination="@id/test_shapeviewfragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_dialogfragment"
+            app:destination="@id/test_dialogfragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_btmtabfragment"
+            app:destination="@id/test_btmtabfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bindingfragment"
+        android:name="com.rui.demo.ui.fragment.BindingFragment"
+        android:label="BindingFragment" />
+    <fragment
+        android:id="@+id/home_paginationfragment"
+        android:name="com.rui.demo.ui.fragment.PaginationFragment"
+        android:label="PaginationFragment" />
+    <fragment
+        android:id="@+id/home_listfragment"
+        android:name="com.rui.demo.ui.fragment.ListFragment"
+        android:label="ListFragment" />
+    <fragment
+        android:id="@+id/home_roomsamplefragment"
+        android:name="com.rui.demo.ui.fragment.RoomSampleFragment"
+        android:label="RoomSampleFragment" />
+    <fragment
+        android:id="@+id/test_mutifragment"
+        android:name="com.rui.demo.ui.fragment.MutiFragment"
+        android:label="MutiFragment" />
+    <fragment
+        android:id="@+id/test_shapeviewfragment"
+        android:name="com.rui.demo.ui.fragment.ShapeViewFragment"
+        android:label="ShapeViewFragment" />
+
+    <fragment
+        android:id="@+id/test_dialogfragment"
+        android:name="com.rui.demo.ui.fragment.DialogFragment"
+        android:label="DialogFragment" />
+    <fragment
+        android:id="@+id/test_btmtabfragment"
+        android:name="com.rui.demo.ui.fragment.BtmTabFragment"
+        android:label="BtmTabFragment" />
+
+
+</navigation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.MutiViewModel" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                onClickCommand="@{viewModel.contentClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示内容" />
+
+            <Button
+                onClickCommand="@{viewModel.loadingClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中" />
+
+            <Button
+                onClickCommand="@{viewModel.errorClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="错误页面" />
+
+            <Button
+                onClickCommand="@{viewModel.emptyClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="空页面" />
+        </LinearLayout>
+        <com.rui.mvvmlazy.widget.MultiStateView
+            android:id="@+id/multiStateView"
+            bindViewState="@{viewModel.viewState}"
+            retryClick="@{viewModel.reTryLoad}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:msv_emptyView="@layout/view_empty"
+            app:msv_errorView="@layout/view_error"
+            app:msv_loadingView="@layout/view_loading"
+            app:msv_viewState="content">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:textSize="50sp"
+              android:textColor="@color/text_def"
+              android:text="显示内容"/>
+        </com.rui.mvvmlazy.widget.MultiStateView>
+    </LinearLayout>
+
+
+</layout>

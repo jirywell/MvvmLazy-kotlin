@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.PaginationViewModel" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/base_view_pagination"
+            app:enableRefresh="@{true}"
+            app:layoutManagerFactory="@{LayoutManagers.linear()}"
+            app:lineManagerFactory="@{LineManagers.divider(@color/divider,1)}"
+            app:viewModel="@{viewModel}" />
+    </LinearLayout>
+
+
+</layout>

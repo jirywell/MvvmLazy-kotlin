@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@drawable/base_view_empty_cache"
+        android:drawablePadding="18dp"
+        android:gravity="center_horizontal"
+        android:text="@string/empty_message"
+        android:textSize="14sp" />
+
+</androidx.core.widget.NestedScrollView>

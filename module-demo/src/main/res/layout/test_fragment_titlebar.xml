@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hjq.bar.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barStyle="light"
+            app:title="默认的标题栏" />
+
+        <androidx.core.widget.NestedScrollView
+            android:background="@color/bg_gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp20"
+                android:paddingBottom="@dimen/dp50">
+
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:backButton="false"
+                    app:title="不带返回按钮并标题加粗" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    app:backButton="false"
+                    app:title="标题向左对齐并且加粗"
+                    app:titleGravity="start"
+                    app:titleStyle="bold" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:lineVisible="false"
+                    app:title="不带分割线的标题栏" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:lineVisible="false"
+                    app:title="标题文字过多会自动开启自带跑马灯效果，就问你溜不溜" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingVertical="10dp"
+                    app:title="通过垂直内间距来调整标题栏的高度" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:leftIcon="@drawable/test_search"
+                    app:leftTint="#ff00ff"
+                    app:rightIcon="@drawable/test_search"
+                    app:rightTint="#00ff00"
+                    app:title="带图标的标题栏" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:drawableSize="30dp"
+                    app:leftIcon="@drawable/test_search"
+                    app:rightIcon="@drawable/test_search"
+                    app:title="限制左右图标的大小" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:backButton="false"
+                    app:leftColor="#FF3300"
+                    app:leftSize="18sp"
+                    app:leftTitle="左边"
+                    app:rightColor="#0033FF"
+                    app:rightSize="18sp"
+                    app:rightTitle="右边"
+                    app:title="自定义文字大小和颜色"
+                    app:titleSize="20sp" />
+
+                <com.hjq.bar.TitleBar
+                    android:id="@+id/tb_main_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:leftIcon="@drawable/test_search"
+                    app:leftTitle="左边"
+                    app:rightIcon="@drawable/test_search"
+                    app:rightTitle="右边"
+                    app:title="监听标题栏点击事件" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:title="自定义标题栏">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/test_search" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/test_search" />
+
+                    </LinearLayout>
+
+                </com.hjq.bar.TitleBar>
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:barStyle="night"
+                    app:leftTitle="返回"
+                    app:rightTitle="设置"
+                    app:title="夜间模式的标题栏" />
+
+                <com.hjq.bar.TitleBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/test_shape_gradient"
+                    app:barStyle="transparent"
+                    app:leftBackground="@null"
+                    app:leftTitle="返回"
+                    app:rightBackground="@null"
+                    app:rightTitle="设置"
+                    app:title="仿QQ渐变样式" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.TitleBarViewModel" />
+    </data>
+</layout>

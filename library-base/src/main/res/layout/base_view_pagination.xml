@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+        <variable
+            name="enableRefresh"
+            type="Boolean" />
+        <variable
+            name="viewModel"
+            type="com.rui.base.ui.viewModel.BasePaginationViewModel" />
+
+        <variable
+            name="layoutManagerFactory"
+            type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LayoutManagers.LayoutManagerFactory" />
+
+        <variable
+            name="lineManagerFactory"
+            type="com.rui.mvvmlazy.binding.viewadapter.recyclerview.LineManagers.LineManagerFactory" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.rui.mvvmlazy.widget.MultiStateView
+            android:id="@+id/multiStateView"
+            bindViewState="@{viewModel.viewState}"
+            retryClick="@{viewModel.reTryLoad}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:msv_emptyView="@layout/view_empty"
+            app:msv_errorView="@layout/view_error"
+            app:msv_loadingView="@layout/view_loading"
+            app:msv_viewState="content">
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/smartRefreshLayout"
+                smartEnableRefresh="@{enableRefresh}"
+                smartEnableAutoLoadMore="@{true}"
+                smartOnLoadMoreCommand="@{viewModel.loadMore}"
+                smartOnRefreshCommand="@{viewModel.reTryLoad}"
+                smartRefreshState="@{viewModel.smartRefreshState}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_live_other"
+                    bindAdapter="@{viewModel.mAdapter}"
+                    layoutManager="@{layoutManagerFactory}"
+                    lineManager="@{lineManagerFactory}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </com.rui.mvvmlazy.widget.MultiStateView>
+    </LinearLayout>
+
+
+</layout>

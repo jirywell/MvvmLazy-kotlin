@@ -1,0 +1,6 @@
+include ':module-sign'
+include ':module-home'
+include ':module-demo'
+rootProject.name='懒人框架-kotlin'
+include ':app', ':library-base', ':library-mvvmlazy'
+

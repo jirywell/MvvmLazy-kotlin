@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rui.demo">
+
+    <application>
+        <activity android:name="com.rui.demo.ui.activity.TestActivity">
+
+        </activity>
+    </application>
+
+</manifest>

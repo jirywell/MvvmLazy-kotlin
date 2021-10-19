@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <!--    信号强度显示条-->
+    <declare-styleable name="acWindSpeedView">
+        <attr name="acWindSpeedWidth" format="dimension" />
+        <attr name="acWindSpeedHeight" format="dimension" />
+        <attr name="acWindSpeedWidthTotalLevel" format="integer" />
+        <attr name="acWindSpeedTotalLevel" format="integer" />
+        <attr name="acWindSpeedLevel" format="integer" />
+        <attr name="acWindBgColor" format="color"/>
+        <attr name="acWindSpeedColor" format="color"/>
+    </declare-styleable>
+</resources>

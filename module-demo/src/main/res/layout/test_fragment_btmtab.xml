@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.BtmTabViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_container_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tab_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toTopOf="@+id/tab_layout" />
+
+        <com.angcyo.tablayout.DslTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tab_deselect_color="@color/text_minor"
+            app:tab_item_auto_equ_width="true"
+            app:tab_select_color="@color/black">
+
+            <com.ruffian.library.widget.RTextView
+                style="@style/TabCommonItemStyle"
+                android:drawablePadding="6dp"
+                android:text="首页1"
+                android:textSize="@dimen/sp14"
+                app:icon_normal_top="@drawable/test_ic_home"
+                app:icon_with_text="true"
+                app:layout_tab_indicator_content_index="0" />
+
+            <com.ruffian.library.widget.RTextView
+                style="@style/TabCommonItemStyle"
+                android:drawablePadding="6dp"
+                android:text="消息"
+                android:textSize="@dimen/sp14"
+                app:icon_normal_top="@drawable/test_ic_message"
+                app:icon_with_text="true"
+                app:layout_tab_indicator_content_index="1" />
+
+
+            <com.ruffian.library.widget.RTextView
+                style="@style/TabCommonItemStyle"
+                android:drawablePadding="6dp"
+                android:text="联系人"
+                android:textSize="@dimen/sp14"
+                app:icon_normal_top="@drawable/test_ic_contact"
+                app:icon_with_text="true"
+                app:layout_tab_indicator_content_index="2" />
+
+            <com.ruffian.library.widget.RTextView
+                style="@style/TabCommonItemStyle"
+                android:drawablePadding="6dp"
+                android:text="设置"
+                android:textSize="@dimen/sp14"
+                app:icon_normal_top="@drawable/test_ic_setting"
+                app:icon_with_text="true"
+                app:layout_tab_indicator_content_index="3" />
+
+        </com.angcyo.tablayout.DslTabLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
