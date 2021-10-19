@@ -263,9 +263,6 @@ binding:isThrottleFirst="@{Boolean.TRUE}"
 ```
 那这功能是在哪里做的呢？答案在下面的代码中。
 ```java
-//防重复点击间隔(秒)
-public static final int CLICK_INTERVAL = 1;
-
 /**
 * requireAll 是意思是是否需要绑定全部参数, false为否
 * View的onClick事件绑定
