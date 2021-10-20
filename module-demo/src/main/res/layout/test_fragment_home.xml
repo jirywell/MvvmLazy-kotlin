@@ -38,7 +38,19 @@
                 app:ripple="true"
                 app:ripple_color="@color/red"
                 app:ripple_mask_style="normal" />
-
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:onClick="@{()->presenter.netClick()}"
+                android:text="网络请求示例"
+                android:textColor="@android:color/white"
+                app:background_normal="@color/colorAccent"
+                app:corner_radius="15dp"
+                app:ripple="true"
+                app:ripple_color="@color/red"
+                app:ripple_mask_style="normal" />
             <com.ruffian.library.widget.RTextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp35"

@@ -50,6 +50,13 @@ class TestFragment : BaseVmDbFragment<TestFragmentHomeBinding, TestViewModel>() 
                 .navigate(R.id.home_action_testfragment_to_bindingfragment)
         }
 
+        fun netClick() {
+            NavHostFragment
+                .findNavController(this@TestFragment)
+                .navigate(R.id.test_action_testfragment_to_test_networkfragment)
+
+        }
+
         fun rvPaginationClick() {
             NavHostFragment
                 .findNavController(this@TestFragment)

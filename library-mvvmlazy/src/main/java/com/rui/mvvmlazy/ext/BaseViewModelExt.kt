@@ -2,8 +2,9 @@ package com.rui.mvvmlazy.ext
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.rui.mvvmlazy.base.activity.BaseVmActivity
 import com.rui.mvvmlazy.base.BaseViewModel
+import com.rui.mvvmlazy.base.activity.BaseVmActivity
+import com.rui.mvvmlazy.base.fragment.BaseVmFragment
 import com.rui.mvvmlazy.ext.util.loge
 import com.rui.mvvmlazy.http.AppException
 import com.rui.mvvmlazy.http.BaseResponse
@@ -19,36 +20,6 @@ import kotlinx.coroutines.*
  * 时间　: 2020/4/8
  * 描述　:BaseViewModel请求协程封装
  */
-
-/**
- * 显示页面状态，这里有个技巧，成功回调在第一个，其后两个带默认值的回调可省
- * @param resultState 接口返回值
- * @param onLoading 加载中
- * @param onSuccess 成功回调
- * @param onError 失败回调
- *
- */
-fun <T> BaseVmActivity<*>.parseState(
-    resultState: ResultState<T>,
-    onSuccess: (T) -> Unit,
-    onError: ((AppException) -> Unit)? = null,
-    onLoading: (() -> Unit)? = null
-) {
-    when (resultState) {
-        is ResultState.Loading -> {
-            showDialog(resultState.loadingMessage)
-            onLoading?.run { this }
-        }
-        is ResultState.Success -> {
-            dismissDialog()
-            onSuccess(resultState.data)
-        }
-        is ResultState.Error -> {
-            dismissDialog()
-            onError?.run { this(resultState.error) }
-        }
-    }
-}
 
 /**
  * 显示页面状态，这里有个技巧，成功回调在第一个，其后两个带默认值的回调可省
@@ -83,9 +54,42 @@ fun <T> BaseVmActivity<*>.parseState(
     }
 }
 
+/**
+ * 显示页面状态，这里有个技巧，成功回调在第一个，其后两个带默认值的回调可省
+ * @param resultState 接口返回值
+ * @param onLoading 加载中
+ * @param onSuccess 成功回调
+ * @param onError 失败回调
+ *
+ */
+fun <T> BaseVmFragment<*>.parseState(
+    resultState: ResultState<T>,
+    onSuccess: (T) -> Unit,
+    onError: ((AppException) -> Unit)? = null,
+    onLoading: ((message: String) -> Unit)? = null
+) {
+    when (resultState) {
+        is ResultState.Loading -> {
+            if (onLoading == null) {
+                showDialog(resultState.loadingMessage)
+            } else {
+                onLoading.invoke(resultState.loadingMessage)
+            }
+        }
+        is ResultState.Success -> {
+            dismissDialog()
+            onSuccess(resultState.data)
+        }
+        is ResultState.Error -> {
+            dismissDialog()
+            onError?.run { this(resultState.error) }
+        }
+    }
+}
+
 
 /**
- * net request 不校验请求结果数据是否是成功
+ * net request 过滤服务器结果，失败抛异常
  * @param block 请求体方法
  * @param resultState 请求回调的ResultState数据
  * @param isShowDialog 是否显示加载框

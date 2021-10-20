@@ -35,6 +35,9 @@
         <action
             android:id="@+id/test_action_testfragment_to_test_btmtabfragment"
             app:destination="@id/test_btmtabfragment" />
+        <action
+            android:id="@+id/test_action_testfragment_to_test_networkfragment"
+            app:destination="@id/test_networkfragment" />
     </fragment>
     <fragment
         android:id="@+id/bindingfragment"
@@ -69,6 +72,10 @@
         android:id="@+id/test_btmtabfragment"
         android:name="com.rui.demo.ui.fragment.BtmTabFragment"
         android:label="BtmTabFragment" />
+    <fragment
+        android:id="@+id/test_networkfragment"
+        android:name="com.rui.demo.ui.fragment.NetWorkFragment"
+        android:label="NetWorkFragment" />
 
 
 </navigation>

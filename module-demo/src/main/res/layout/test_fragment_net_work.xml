@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp15">
+
+        <Button
+            onClickCommand="@{viewModel.clickCommand1}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网络请求ViewModel处理结果" />
+
+        <Button
+            onClickCommand="@{viewModel.clickCommand2}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网络请求页面处理结果" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.netDataStr}" />
+
+    </LinearLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rui.demo.ui.viewmodel.NetWorkViewModel" />
+
+        <import type="com.rui.demo.R" />
+    </data>
+</layout>
