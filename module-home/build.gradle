@@ -10,19 +10,20 @@ android {
     }
     //统一资源前缀，规范资源引用
     resourcePrefix "home_"
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
-repositories {
-    flatDir {
-        dirs project(':library-base').file('libs')
-    }
-}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.?ar'])
     implementation 'com.luozm.captcha:captcha:1.1.2'
     implementation 'com.github.WGwangguan:SeparatedEditText:v1.2'
     api project(':library-base')

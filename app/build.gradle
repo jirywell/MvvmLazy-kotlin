@@ -13,7 +13,7 @@ android {
         multiDexEnabled true
         ndk {
 //            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', "mips"
-            abiFilters "armeabi-v7a","arm64-v8a"
+            abiFilters "armeabi-v7a", "arm64-v8a"
         }
         manifestPlaceholders = [
                 JPUSH_APPKEY : "59c2a793b2eb0b4d4f687612",//极光推送AppKey
@@ -62,14 +62,18 @@ android {
     }
     //统一资源前缀，规范资源引用
     resourcePrefix "app_"
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 kapt {
@@ -77,13 +81,8 @@ kapt {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
-repositories {
-    flatDir {
-        dirs project(':library-base').file('libs')
-    }
-}
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.?ar'], dir: 'libs')
     kapt rootProject.ext.dependencies["arouter-compiler"]
     //宿主项目中判断组件是否需要独立运行
     if (isBuildModule.toBoolean()) {

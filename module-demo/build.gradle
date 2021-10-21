@@ -15,20 +15,20 @@ android {
     }
     //统一资源前缀，规范资源引用
     resourcePrefix "test_"
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
-repositories {
-    flatDir {
-        dirs project(':library-base').file('libs')
-    }
-}
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.?ar'])
     api project(':library-base')
     //组件中依赖阿里路由编译框架
     kapt rootProject.ext.dependencies["arouter-compiler"]

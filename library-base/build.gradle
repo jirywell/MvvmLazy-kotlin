@@ -30,15 +30,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-repositories {
-    //  AAR 包所需的配置
-    flatDir {
-        dirs 'libs'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
 }
+
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(include: ['*.?ar'], dir: 'libs')
     api project(':library-mvvmlazy')
     //阿里路由框架
     api rootProject.ext.dependencies["arouter-api"]
