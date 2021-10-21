@@ -571,10 +571,7 @@ if (mBundle != null) {
 项目组件化方案参考了[MVVMHabitComponent] [https://github.com/goldze/MVVMHabitComponent]
 ## About
 ** 本人喜欢尝试新的技术，以后发现有好用的东西，我将会在企业项目中实战，没有问题了就会把它引入到**MvvmLazy**中，一直维护着这套框架，谢谢各位朋友的支持。如果觉得这套框架不错的话，麻烦点个 **star**，你的支持则是我前进的动力！
-感谢各位大神提供的思路帮助..
 
-[MVVMHabit](https://github.com/goldze/MVVMHabit)  
-[AndroidProject](https://github.com/getActivity/AndroidProject)
 
 **邮箱**：664209769@qq.com
 
