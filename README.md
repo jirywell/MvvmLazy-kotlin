@@ -20,7 +20,7 @@
 
 	[retrofit](https://github.com/square/retrofit)+ [okhttp](https://github.com/square/okhttp)+
 	[gson](https://github.com/google/gson) 负责解析json数据；  
-	[glide](https://github.com/bumptech/glide) 负责加载图片；   
+	[coil](https://coil-kt.github.io/coil/) 负责加载图片；   
 	[permissionx](https://github.com/guolindev/PermissionX) 负责Android 6.0权限申请；    
 	[xpopup](https://github.com/li-xiaojun/XPopup) 多种样式Dialog框架  
 	[LiveEventBus](https://github.com/JeremyLiao/LiveEventBus) LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP。  
@@ -113,7 +113,7 @@ dependencies = [] 是依赖第三方库的配置，可以加新库，但不要�
 
 可以在你的自己AppApplication中配置
 
-```java
+```kotlin
 //是否开启日志打印
 KLog.init(true);
 //配置全局异常崩溃操作
@@ -128,7 +128,7 @@ CaocConfig.Builder.create()
     .restartActivity(LoginActivity.class) //重新启动后的activity
     //.errorActivity(YourCustomErrorActivity.class) //崩溃后的错误activity
     //.eventListener(new YourCustomEventListener()) //崩溃后的错误监听
-    .apply();
+    .apply()
 ```
 
 ## 2、快速上手
@@ -156,7 +156,7 @@ CaocConfig.Builder.create()
 ##### 2.1.2、继承BaseActivity
 
 LoginActivty
-```java
+```kotlin
 
 
 class LoginActivty : BaseVmDbActivity<ActivityloginBinding, LoginViewModel>() {
@@ -192,7 +192,7 @@ initVariableId() 返回变量的id，对应activity_login中name="viewModel"，�
 ##### 2.1.3、继承BaseViewModel
 
 LoginViewModel继承BaseViewModel
-```java
+```kotlin
 class LoginViewModel : BaseViewModel() {
     override fun initData() {
         super.initData()
@@ -208,7 +208,7 @@ BaseViewModel与BaseActivity通过LiveData来处理常用UI逻辑，即可在Vie
 绑定用户名：
 
 在ViewModel中定义
-```java
+```kotlin
 //用户名的绑定
 var userName = MutableLiveData<String>()
 ```
@@ -222,7 +222,7 @@ android:text="@={viewModel.userName}"
 点击事件绑定：
 
 在在ViewModel中定义
-```java
+```kotlin
 //登录按钮的点击事件
 
 var loginOnClick: () -> Unit = {
@@ -243,7 +243,7 @@ android:onClick="@{viewModel.loginOnClick}"
 还拿点击事件说吧，不用传统的绑定方式，使用自定义的点击事件绑定。
 
 在LoginViewModel中定义
-```java
+```kotlin
 //登录按钮的点击事件
 var loginOnClick: () -> Unit = {
         ToastUtils.showShort("登录")
@@ -262,7 +262,7 @@ binding:onClickCommand="@{viewModel.loginOnClick}"
 binding:isThrottleFirst="@{Boolean.TRUE}"
 ```
 那这功能是在哪里做的呢？答案在下面的代码中。
-```java
+```kotlin
 /**
 * requireAll 是意思是是否需要绑定全部参数, false为否
 * View的onClick事件绑定
@@ -293,7 +293,7 @@ onClickCommand方法是自定义的，使用@BindingAdapter注解来标明这是
 绑定图片路径：
 
 在ViewModel中定义
-```java
+```kotlin
 var  imgUrl = "http://img0.imgtn.bdimg.com/it/u=2183314203,562241301&fm=26&gp=0.jpg";
 ```
 在ImageView标签中
@@ -499,20 +499,20 @@ LiveEventBus.get("key",String.class).observe(this) {
 使用方法：
 
 在ViewModel中调用BaseViewModel的方法开一个Fragment
-```java
+```kotlin
 startContainerActivity(你的Fragment类名.class.getCanonicalName())
 ```
 在ViewModel中调用BaseViewModel的方法，携带一个序列化实体打开一个Fragment
-```java
-Bundle mBundle = new Bundle();
-mBundle.putParcelable("entity", entity);
-startContainerActivity(你的Fragment类名.class.getCanonicalName(), mBundle);
+```kotlin
+var mBundle = Bundle()
+mBundle.putParcelable("entity", entity)
+startContainerActivity(你的Fragment类名.class.getCanonicalName(), mBundle)
 ```
 在你的Fragment中取出实体
-```java
-Bundle mBundle = getArguments();
+```kotlin
+var mBundle = getArguments()
 if (mBundle != null) {
-    entity = mBundle.getParcelable("entity");
+    entity = mBundle.getParcelable("entity")
 }
 ```
 ### 3.3、6.0权限申请

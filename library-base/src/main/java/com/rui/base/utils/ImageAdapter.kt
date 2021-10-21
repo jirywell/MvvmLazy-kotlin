@@ -2,9 +2,7 @@ package com.rui.base.utils
 
 import android.view.ViewGroup
 import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
+import coil.load
 import com.rui.base.R
 import com.rui.base.entity.BannerInfo
 import com.youth.banner.adapter.BannerAdapter
@@ -37,12 +35,6 @@ class ImageAdapter(mDatas: List<BannerInfo>) : BannerAdapter<BannerInfo, ImageHo
         val params = holder.imageView.layoutParams
         //        val width=ScreenUtil.getScreenWidth(context)-ScreenUtil.dip2px(context,20f)
 //        val height= BigDecimal(width.toString()).divide(BigDecimal("2.09"),2, RoundingMode.HALF_UP).toInt()
-        Glide.with(holder.imageView.context).asDrawable().load(Constant.IMAGE_URL + data.bannerPath)
-            .placeholder(R.drawable.ic_def_loading).apply(
-                RequestOptions.bitmapTransform(
-                    RoundedCorners(10)
-                ).override(params.width, params.height)
-            )
-            .into(holder.imageView)
+        holder.imageView.load(Constant.IMAGE_URL + data.bannerPath)
     }
 }

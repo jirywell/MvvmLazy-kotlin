@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.rui.demo.data.repository
 import com.rui.demo.data.source.local.db.Person
 import com.rui.mvvmlazy.base.BaseViewModel
+import com.rui.mvvmlazy.ext.launch
 
 /**
  * Create Date：2021/01/01
@@ -16,18 +17,19 @@ class RoomSampleViewModel() :
         get() = repository.getAllWordsLive()
 
     fun insertWords(vararg words: Person) {
-        repository.insertWords(*words)
+        launch({ repository.insertWords(*words) }, {})
     }
 
     fun updateWords(vararg words: Person) {
-        repository.updateWords(*words)
+        launch({ repository.updateWords(*words) }, {})
+
     }
 
     fun deleteWords(vararg words: Person) {
-        repository.deleteWords(*words)
+        launch({ repository.deleteWords(*words) }, {})
     }
 
     fun deleteAllWords() {
-        repository.deleteAllWords()
+        launch({ repository.deleteAllWords() }, {})
     }
 }

@@ -30,7 +30,7 @@ dependencies {
     api 'com.github.angcyo.DslTablayout:TabLayout:2.0.2'
     api 'com.github.angcyo.DslTablayout:ViewPager1Delegate:2.0.2'
     api 'com.github.angcyo.DslTablayout:ViewPager2Delegate:2.0.2'
-    api 'com.guolindev.permissionx:permissionx:1.6.0'
+
     //dialog框架
     api 'com.github.li-xiaojun:XPopup:2.5.4'
     //沉浸式框架
@@ -39,16 +39,14 @@ dependencies {
     api 'com.github.getActivity:TitleBar:8.6'
     //万能分割线
     api 'com.github.fondesa:recycler-view-divider:3.5.0'
-    //LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力
-    api 'com.jeremyliao:live-event-bus-x:1.7.2'
-    //recyclerView适配器
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     // 上拉加载，下拉刷新
     api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
     api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
     api "org.jetbrains.anko:anko:$anko_version"
-    //防崩溃
-    api 'cat.ereza:customactivityoncrash:2.3.0'
+    api rootProject.ext.dependencies["permissionx"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["liveEventBus"]
+    api rootProject.ext.dependencies["customactivityoncrash"]
     //android_x
     api rootProject.ext.android_x.multidex
     api rootProject.ext.android_x["appcompat"]
@@ -69,12 +67,8 @@ dependencies {
     api rootProject.ext.dependencies["converter-gson"]
     //json解析
     api rootProject.ext.dependencies.gson
-    //glide图片加载库
-    api(rootProject.ext.dependencies.glide) {
-        exclude group: 'com.android.support'
-    }
-
-    kapt rootProject.ext.dependencies["glide-compiler"]
+    //coil图片加载库
+    api(rootProject.ext.dependencies.coil)
     //Google LiveData和ViewModel组件
     api rootProject.ext.android_x["lifecycle-extensions"]
     kapt rootProject.ext.android_x["lifecycle-compiler"]
