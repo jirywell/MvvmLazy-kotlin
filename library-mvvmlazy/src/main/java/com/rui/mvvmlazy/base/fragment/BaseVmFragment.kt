@@ -94,7 +94,7 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment(), IBaseView {
     /**
      * 初始化沉浸式状态栏
      */
-    private fun createStatusBarConfig(): ImmersionBar {
+    protected open fun createStatusBarConfig(): ImmersionBar {
         return ImmersionBar.with(this) // 默认状态栏字体颜色为黑色
             .statusBarDarkFont(isStatusBarDarkFont) // 指定导航栏背景颜色
             .navigationBarColor(android.R.color.white) // 状态栏字体和导航栏内容自动变色，必须指定状态栏颜色和导航栏颜色才可以自动变色
@@ -262,8 +262,20 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment(), IBaseView {
      */
     private fun initViewModel(): VM {
 
-        return ViewModelProvider(this).get(getVmClazz(this))
+        return ViewModelProvider(
+            if (isActivityViewModel) {
+                requireActivity()
+            } else {
+                this
+            }
+        ).get(getVmClazz(this))
     }
+
+    /**
+     * 是否获取 activityViewModel
+     */
+    protected open val isActivityViewModel: Boolean
+        get() = false
 
     private fun <T> getVmClazz(obj: Any): T {
         return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as T

@@ -43,4 +43,5 @@ abstract class BaseVmDbFragment<V : ViewDataBinding, VM : BaseViewModel> : BaseV
     fun refreshLayout() {
         binding.setVariable(viewModelId, viewModel)
     }
+
 }
