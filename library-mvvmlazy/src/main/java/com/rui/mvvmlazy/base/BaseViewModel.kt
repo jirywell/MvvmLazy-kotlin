@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.rui.mvvmlazy.bus.event.SingleLiveEvent
+import kotlinx.coroutines.cancel
 import java.util.*
 
 /**
@@ -82,6 +84,7 @@ open class BaseViewModel : ViewModel(), IBaseViewModel {
     override fun removeEventBus() {}
     override fun onCleared() {
         super.onCleared()
+        viewModelScope.cancel()
     }
 
     inner class UIChangeLiveData {
