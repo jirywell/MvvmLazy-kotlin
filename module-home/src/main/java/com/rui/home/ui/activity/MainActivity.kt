@@ -10,7 +10,7 @@ import com.rui.home.ui.viewmodel.MainViewModel
 import com.rui.mvvmlazy.base.activity.BaseVmDbActivity
 
 @Route(path = RouterActivityPath.Main.PAGER_MAIN)
-class MainActivity : BaseVmDbActivity<HomeActivityMainBinding, MainViewModel>() {
+class MainActivity : BaseVmDbActivity<MainViewModel,HomeActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

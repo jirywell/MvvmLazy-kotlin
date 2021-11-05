@@ -9,7 +9,7 @@ import com.rui.demo.databinding.TestFragmentShapeviewBinding
 import com.rui.demo.ui.viewmodel.ShapeViewModel
 import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 
-class ShapeViewFragment : BaseVmDbFragment<TestFragmentShapeviewBinding, ShapeViewModel>() {
+class ShapeViewFragment : BaseVmDbFragment<ShapeViewModel,TestFragmentShapeviewBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

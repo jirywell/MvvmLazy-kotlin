@@ -249,7 +249,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity(), IBaseVi
     }
 
     fun <T> getVmClazz(obj: Any): T {
-        return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as T
+        return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as T
     }
 
     /**

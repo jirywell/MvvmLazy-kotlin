@@ -11,7 +11,7 @@ import com.rui.mvvmlazy.base.BaseViewModel
 /**
  * Created by zjr on 2020/6/15.
  */
-abstract class BaseVmDbFragment<V : ViewDataBinding, VM : BaseViewModel> : BaseVmFragment<VM>() {
+abstract class BaseVmDbFragment<VM : BaseViewModel, V : ViewDataBinding> : BaseVmFragment<VM>() {
     lateinit var binding: V
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -19,7 +19,7 @@ import com.rui.mvvmlazy.base.BaseViewModel
  * Created by zjr on 2020/7/17.
  * 抽取的二级BasePagerFragment
  */
-abstract class BasePagerFragment : BaseVmDbFragment<BaseFragmentBasePagerBinding, BaseViewModel>() {
+abstract class BasePagerFragment<VM : BaseViewModel> : BaseVmDbFragment<VM,BaseFragmentBasePagerBinding >() {
     private var mFragments: List<Fragment>? = null
     private var titlePager: List<String>? = null
     protected abstract fun pagerFragment(): List<Fragment>?
@@ -43,10 +43,10 @@ abstract class BasePagerFragment : BaseVmDbFragment<BaseFragmentBasePagerBinding
             val tabTextView = TextView(requireContext())
             tabTextView.text = s
             tabTextView.gravity = Gravity.CENTER
-            binding!!.tabLayout.addView(tabTextView)
+            binding.tabLayout.addView(tabTextView)
         }
         //设置Adapter
-        binding!!.viewPager.adapter = object : FragmentStateAdapter(this@BasePagerFragment) {
+        binding.viewPager.adapter = object : FragmentStateAdapter(this@BasePagerFragment) {
             override fun getItemCount(): Int {
                 return mFragments!!.size
             }
@@ -55,9 +55,9 @@ abstract class BasePagerFragment : BaseVmDbFragment<BaseFragmentBasePagerBinding
                 return mFragments!![position]
             }
         }
-        binding!!.viewPager.currentItem = 0
-        val viewPagerDelegate = ViewPager2Delegate(binding!!.viewPager, binding!!.tabLayout)
-        binding!!.tabLayout.setupViewPager(viewPagerDelegate)
+        binding.viewPager.currentItem = 0
+        val viewPagerDelegate = ViewPager2Delegate(binding.viewPager, binding.tabLayout)
+        binding.tabLayout.setupViewPager(viewPagerDelegate)
     }
 
     override fun initViewObservable() {}

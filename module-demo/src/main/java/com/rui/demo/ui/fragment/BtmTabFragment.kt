@@ -16,7 +16,7 @@ import com.rui.demo.ui.viewmodel.BtmTabViewModel
 import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 import java.util.*
 
-class BtmTabFragment : BaseVmDbFragment<TestFragmentBtmtabBinding, BtmTabViewModel>() {
+class BtmTabFragment : BaseVmDbFragment<BtmTabViewModel,TestFragmentBtmtabBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

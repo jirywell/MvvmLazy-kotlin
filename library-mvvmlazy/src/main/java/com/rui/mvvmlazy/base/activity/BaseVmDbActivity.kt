@@ -10,7 +10,7 @@ import com.rui.mvvmlazy.base.BaseViewModel
  * 描述　: 包含ViewModel 和Databind ViewModelActivity基类，把ViewModel 和Databind注入进来了
  * 需要使用Databind的清继承它
  */
-abstract class BaseVmDbActivity<DB : ViewDataBinding, VM : BaseViewModel> : BaseVmActivity<VM>() {
+abstract class BaseVmDbActivity<VM : BaseViewModel,DB : ViewDataBinding> : BaseVmActivity<VM>() {
 
     lateinit var binding: DB
 

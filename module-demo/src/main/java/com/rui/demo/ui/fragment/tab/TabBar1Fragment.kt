@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import com.rui.demo.BR
 import com.rui.demo.R
 import com.rui.demo.databinding.TestFragmentTabBar1Binding
-import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 import com.rui.mvvmlazy.base.BaseViewModel
+import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 
 /**
  * Created by zjr on 2018/7/18.
  */
-class TabBar1Fragment : BaseVmDbFragment<TestFragmentTabBar1Binding, BaseViewModel>() {
+class TabBar1Fragment : BaseVmDbFragment<BaseViewModel, TestFragmentTabBar1Binding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

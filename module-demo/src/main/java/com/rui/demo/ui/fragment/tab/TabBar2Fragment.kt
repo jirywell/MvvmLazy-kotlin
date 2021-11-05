@@ -12,7 +12,7 @@ import com.rui.mvvmlazy.base.BaseViewModel
 /**
  * Created by zjr on 2018/7/18.
  */
-class TabBar2Fragment : BaseVmDbFragment<TestFragmentTabBar2Binding, BaseViewModel>() {
+class TabBar2Fragment : BaseVmDbFragment<BaseViewModel,TestFragmentTabBar2Binding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

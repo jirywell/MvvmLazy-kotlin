@@ -9,7 +9,7 @@ import com.rui.demo.databinding.TestFragmentBindingBinding
 import com.rui.demo.ui.viewmodel.BindingViewModel
 import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 
-class BindingFragment : BaseVmDbFragment<TestFragmentBindingBinding, BindingViewModel>() {
+class BindingFragment : BaseVmDbFragment<BindingViewModel, TestFragmentBindingBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

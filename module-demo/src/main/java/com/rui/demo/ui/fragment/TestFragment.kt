@@ -18,7 +18,7 @@ import org.jetbrains.anko.support.v4.toast
 /**
  * 测试入口页面
  */
-class TestFragment : BaseVmDbFragment<TestFragmentHomeBinding, TestViewModel>() {
+class TestFragment : BaseVmDbFragment<TestViewModel,TestFragmentHomeBinding >() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

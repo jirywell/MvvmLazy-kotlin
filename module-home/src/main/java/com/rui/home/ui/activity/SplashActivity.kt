@@ -7,10 +7,9 @@ import com.rui.home.BR
 import com.rui.home.R
 import com.rui.home.databinding.HomeActivitySplashBinding
 import com.rui.home.ui.viewmodel.SplashViewModel
-import com.rui.mvvmlazy.base.activity.BaseVmActivity
 import com.rui.mvvmlazy.base.activity.BaseVmDbActivity
 
-class SplashActivity : BaseVmDbActivity<HomeActivitySplashBinding, SplashViewModel>() {
+class SplashActivity : BaseVmDbActivity<SplashViewModel, HomeActivitySplashBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

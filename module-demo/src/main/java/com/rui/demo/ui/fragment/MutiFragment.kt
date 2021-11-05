@@ -9,7 +9,7 @@ import com.rui.demo.databinding.TestFragmentMutiBinding
 import com.rui.demo.ui.viewmodel.MutiViewModel
 import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 
-class MutiFragment : BaseVmDbFragment<TestFragmentMutiBinding, MutiViewModel>() {
+class MutiFragment : BaseVmDbFragment<MutiViewModel,TestFragmentMutiBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

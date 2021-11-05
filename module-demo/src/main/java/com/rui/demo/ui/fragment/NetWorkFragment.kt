@@ -12,7 +12,7 @@ import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 import com.rui.mvvmlazy.ext.parseState
 import com.rui.mvvmlazy.utils.common.ToastUtils
 
-class NetWorkFragment : BaseVmDbFragment<TestFragmentNetWorkBinding, NetWorkViewModel>() {
+class NetWorkFragment : BaseVmDbFragment<NetWorkViewModel,TestFragmentNetWorkBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

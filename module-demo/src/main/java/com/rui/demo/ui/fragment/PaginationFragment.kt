@@ -9,7 +9,7 @@ import com.rui.demo.databinding.TestFragmentPaginationBinding
 import com.rui.demo.ui.viewmodel.PaginationViewModel
 import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 
-class PaginationFragment : BaseVmDbFragment<TestFragmentPaginationBinding, PaginationViewModel>() {
+class PaginationFragment : BaseVmDbFragment<PaginationViewModel,TestFragmentPaginationBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

@@ -6,6 +6,7 @@ import com.rui.demo.ui.fragment.tab.TabBar1Fragment
 import com.rui.demo.ui.fragment.tab.TabBar2Fragment
 import com.rui.demo.ui.fragment.tab.TabBar3Fragment
 import com.rui.demo.ui.fragment.tab.TabBar4Fragment
+import com.rui.mvvmlazy.base.BaseViewModel
 import java.util.*
 
 /**
@@ -13,8 +14,8 @@ import java.util.*
  * Create Date：2019/01/25
  * Description：ViewPager+Fragment的实现
  */
-class ViewPagerGroupFragment : BasePagerFragment() {
-    override fun pagerFragment(): List<Fragment>? {
+class ViewPagerGroupFragment : BasePagerFragment<BaseViewModel>() {
+    override fun pagerFragment(): List<Fragment> {
         val list: MutableList<Fragment> = ArrayList()
         list.add(TabBar1Fragment.newInstance())
         list.add(TabBar2Fragment.newInstance())
@@ -23,7 +24,7 @@ class ViewPagerGroupFragment : BasePagerFragment() {
         return list
     }
 
-    override fun pagerTitleString(): List<String>? {
+    override fun pagerTitleString(): List<String> {
         val list: MutableList<String> = ArrayList()
         list.add("推荐")
         list.add("新闻")

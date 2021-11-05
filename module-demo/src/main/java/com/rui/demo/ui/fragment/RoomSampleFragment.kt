@@ -17,7 +17,7 @@ import java.util.*
  * 实现Room数据的基本操作
  * zjr
  */
-class RoomSampleFragment : BaseVmDbFragment<TestFragmentRoomBinding, RoomSampleViewModel>() {
+class RoomSampleFragment : BaseVmDbFragment<RoomSampleViewModel,TestFragmentRoomBinding>() {
     var personList: MutableList<Person> = ArrayList()
     override fun initContentView(
         inflater: LayoutInflater?,

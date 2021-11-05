@@ -29,7 +29,7 @@ import com.rui.mvvmlazy.base.fragment.BaseVmDbFragment
 import com.rui.mvvmlazy.utils.common.ToastUtils
 import java.util.*
 
-class DialogFragment : BaseVmDbFragment<TestFragmentDialogBinding, DialogViewModel>() {
+class DialogFragment : BaseVmDbFragment<DialogViewModel,TestFragmentDialogBinding>() {
     override fun initContentView(
         inflater: LayoutInflater?,
         container: ViewGroup?,

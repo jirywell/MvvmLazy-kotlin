@@ -278,7 +278,8 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment(), IBaseView {
         get() = false
 
     private fun <T> getVmClazz(obj: Any): T {
-        return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as T
+        val type= (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments
+        return type[0] as T
     }
 
 
