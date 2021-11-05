@@ -3,32 +3,30 @@ package com.rui.mvvmlazy.base
 import android.app.Activity
 import android.app.Application
 import android.app.Application.ActivityLifecycleCallbacks
-import android.content.ContentProvider
-import android.content.ContentValues
-import android.database.Cursor
-import android.net.Uri
+import android.content.Context
 import android.os.Bundle
 import androidx.multidex.MultiDex
+import androidx.startup.Initializer
 import com.rui.mvvmlazy.base.AppManager.Companion.appManager
 
 /**
- * 作者　: hegaojian
+ * 作者　: zhaojirui
  * 时间　: 2019/12/14
- * 描述　:
+ * 描述　:进行基础组件的初始化操作,并提供全局appContext引用
  */
 
 val appContext: Application by lazy { Ktx.app }
 
-class Ktx : ContentProvider() {
+class Ktx : Initializer<Unit> {
 
     companion object {
         lateinit var app: Application
     }
 
-    override fun onCreate(): Boolean {
-        val application = context!!.applicationContext as Application
+
+    override fun create(context: Context) {
+        val application = context.applicationContext as Application
         install(application)
-        return true
     }
 
     private fun install(application: Application) {
@@ -52,25 +50,7 @@ class Ktx : ContentProvider() {
     }
 
 
-    override fun insert(uri: Uri, values: ContentValues?): Uri? = null
-
-    override fun query(
-        uri: Uri,
-        projection: Array<String>?,
-        selection: String?,
-        selectionArgs: Array<String>?,
-        sortOrder: String?
-    ): Cursor? = null
-
-
-    override fun update(
-        uri: Uri,
-        values: ContentValues?,
-        selection: String?,
-        selectionArgs: Array<String>?
-    ): Int = 0
-
-    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int = 0
-
-    override fun getType(uri: Uri): String? = null
+    override fun dependencies(): MutableList<Class<out Initializer<*>>> {
+        return mutableListOf()
+    }
 }

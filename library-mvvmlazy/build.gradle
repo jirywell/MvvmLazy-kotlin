@@ -56,6 +56,7 @@ dependencies {
     api rootProject.ext.android_x["navigation-fg-ktx"]
     api rootProject.ext.android_x["navigation-ui"]
     api rootProject.ext.android_x["navigation-ktx"]
+    api rootProject.ext.android_x["startup"]
     //room
     api rootProject.ext.android_x["room"]
     api rootProject.ext.android_x["room-ktx"]

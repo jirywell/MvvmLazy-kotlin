@@ -1,7 +1,6 @@
 package com.rui.base.debug
 
 import android.app.Application
-import com.rui.base.config.ModuleLifecycleConfig
 
 /**
  * Created by zjr on 2018/6/25 0025.
@@ -10,10 +9,6 @@ import com.rui.base.config.ModuleLifecycleConfig
 class DebugApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        //初始化组件(靠前)
-        ModuleLifecycleConfig.instance.initModuleAhead(this)
-        //....
-        //初始化组件(靠后)
-        ModuleLifecycleConfig.instance.initModuleLow(this)
+
     }
 }

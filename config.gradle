@@ -24,6 +24,7 @@ ext {
             'appcompat'           : "androidx.appcompat:appcompat:${versions["support-version"]}",
             "ktx"                 : "androidx.core:core-ktx:1.6.0",
             'multidex'            : "androidx.multidex:multidex:2.0.1",
+            'startup'            : "androidx.startup:startup-runtime:1.1.0",
             'material'            : "com.google.android.material:material:${versions["support-version"]}",
             //Google AAC
             "lifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.2.0",

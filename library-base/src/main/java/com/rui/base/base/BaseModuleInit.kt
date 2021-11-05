@@ -1,6 +1,8 @@
 package com.rui.base.base
 
 import android.app.Application
+import android.content.Context
+import androidx.startup.Initializer
 import com.alibaba.android.arouter.launcher.ARouter
 import com.rui.base.BuildConfig
 import com.rui.mvvmlazy.utils.common.KLog
@@ -16,21 +18,7 @@ import com.zzhoujay.richtext.RichText
  * *description:基础库初始化
  * *******************************
  */
-class BaseModuleInit : IModuleInit {
-    override fun onInitAhead(application: Application): Boolean {
-        //开启打印日志
-        KLog.init(true)
-        //初始化阿里路由框架
-        if (BuildConfig.DEBUG) {
-            ARouter.openLog() // 打印日志
-            ARouter.openDebug() // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
-        }
-        ARouter.init(application) // 尽可能早，推荐在Application中初始化
-        RichText.initCacheDir(application)
-        KLog.e("基础层初始化 -- onInitAhead")
-        return false
-    }
-
+class BaseModuleInit : Initializer<Unit> {
     companion object {
         init {
             //设置全局的Header构建器
@@ -46,8 +34,20 @@ class BaseModuleInit : IModuleInit {
     }
 
 
-    override fun onInitLow(application: Application): Boolean {
-        KLog.e("基础层初始化 -- onInitLow")
-        return false
+    override fun create(context: Context) {
+        //开启打印日志
+        KLog.init(true)
+        //初始化阿里路由框架
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog() // 打印日志
+            ARouter.openDebug() // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(context.applicationContext as Application?) // 尽可能早，推荐在Application中初始化
+        RichText.initCacheDir(context)
+        KLog.d("基础层初始化")
+    }
+
+    override fun dependencies(): MutableList<Class<out Initializer<*>>> {
+        return mutableListOf()
     }
 }
