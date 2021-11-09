@@ -92,7 +92,7 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment(), IBaseView {
         }
 
     /**
-     * 初始化沉浸式状态栏
+     * 初始化沉浸式状态栏,可重写此方法进行状态栏定制
      */
     protected open fun createStatusBarConfig(): ImmersionBar {
         return ImmersionBar.with(this) // 默认状态栏字体颜色为黑色

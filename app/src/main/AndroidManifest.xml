@@ -17,16 +17,6 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity
-            android:name="com.rui.mvvmlazy.wxapi.WXPayEntryActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="wxc331762f55a0901d" />
-            </intent-filter>
-        </activity>
-
 
     </application>
 

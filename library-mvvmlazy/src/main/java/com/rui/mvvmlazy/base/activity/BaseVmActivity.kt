@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.gyf.immersionbar.ImmersionBar
 import com.hjq.bar.OnTitleBarListener
@@ -111,7 +109,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity(), IBaseVi
         }
 
     /**
-     * 初始化沉浸式状态栏
+     * 初始化沉浸式状态栏,可重写此方法进行状态栏定制
      */
     protected open fun createStatusBarConfig(): ImmersionBar {
         return ImmersionBar.with(this) // 默认状态栏字体颜色为黑色
@@ -274,14 +272,4 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity(), IBaseVi
     override fun initData() {}
     override fun initViewObservable() {}
 
-    /**
-     * 创建ViewModel
-     *
-     * @param cls
-     * @param <T>
-     * @return
-    </T> */
-    fun <T : ViewModel?> createViewModel(activity: FragmentActivity, cls: Class<T>): T {
-        return ViewModelProvider(activity).get(cls)
-    }
 }

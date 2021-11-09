@@ -60,8 +60,6 @@ dependencies {
     api 'me.zhanghai.android.materialratingbar:library:1.4.0'
     //图表
     api 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    //微信
-    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 //倒计时控件
     api 'com.github.iwgang:countdownview:2.1.6'
 
