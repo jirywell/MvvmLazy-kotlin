@@ -15,7 +15,7 @@ data class ApiResponse<T>(val code: Int, val message: String, val result: T) :
     BaseResponse<T>() {
 
     // 这里是示例，wanandroid 网站返回的 错误码为 0 就代表请求成功，请你根据自己的业务需求来改变
-    override fun isSucces() = code == 200
+    override fun isSuccess() = code == 200
 
     override fun getResponseCode() = code
 

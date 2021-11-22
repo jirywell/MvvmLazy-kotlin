@@ -33,7 +33,7 @@ abstract class BasePaginationViewModel<T> :
     //下拉刷新,分页加载状态控制
     var smartRefreshState = MutableLiveData<SmartRefreshState>()
     var pageIndex = 1
-    val PAGE_SIZE = 10
+    val pageSize = 10
     abstract val adapter: BaseQuickAdapter<T, BaseViewHolder>?
     abstract val dateListType: ListType?
     var mAdapter: BaseQuickAdapter<T, BaseViewHolder>? = null
@@ -77,7 +77,7 @@ abstract class BasePaginationViewModel<T> :
         getListData(pageIndex)
     }
 
-    fun getListData(page: Int) {
+    private fun getListData(page: Int) {
         when (dateListType) {
             ListType.NO_PAGING_INFO ->
                 request({ getHttpRequestNoPagingData(page) }, {
@@ -91,7 +91,7 @@ abstract class BasePaginationViewModel<T> :
                     } else {
                         mAdapter!!.addData(it)
                     }
-                    if (it.size == PAGE_SIZE) {
+                    if (it.size == pageSize) {
                         smartRefreshState.value = SmartRefreshState.LOAD_FINISH
                         pageIndex++
                     } else {
@@ -117,7 +117,7 @@ abstract class BasePaginationViewModel<T> :
                     } else {
                         mAdapter!!.addData(it.records!!)
                     }
-                    if (it.pages == PAGE_SIZE) {
+                    if (it.pages == pageSize) {
                         smartRefreshState.value = SmartRefreshState.LOAD_FINISH
                         pageIndex++
                     } else {

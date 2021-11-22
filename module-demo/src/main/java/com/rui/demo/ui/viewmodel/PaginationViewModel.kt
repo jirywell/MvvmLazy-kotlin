@@ -11,14 +11,16 @@ import com.rui.demo.databinding.TestLayoutItemJokeBinding
 import com.rui.mvvmlazy.binding.viewadapter.recyclerview.DataBindingAdapter
 
 class PaginationViewModel : BasePaginationViewModel<JokeInfo>() {
-    var myAdapter = object :
-        DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
-        override fun convertItem(
-            holder: BaseViewHolder,
-            binding: TestLayoutItemJokeBinding?,
-            item: JokeInfo
-        ) {
-            binding!!.entity = item
+    private val myAdapter by lazy {
+        object :
+            DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
+            override fun convertItem(
+                holder: BaseViewHolder,
+                binding: TestLayoutItemJokeBinding?,
+                item: JokeInfo
+            ) {
+                binding!!.entity = item
+            }
         }
     }
     override val adapter: BaseQuickAdapter<JokeInfo, BaseViewHolder>

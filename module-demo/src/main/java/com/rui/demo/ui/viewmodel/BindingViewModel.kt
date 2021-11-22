@@ -11,16 +11,6 @@ class BindingViewModel : BaseViewModel() {
     var imgUrl =
         MutableLiveData("http://video.hnbxwhy.com/ads/77b65f2b-e31d-4cfd-b6d9-39ee1f9dfc78.jpg")
     var data = MutableLiveData<List<IKeyAndValue>>()
-
-    //    var clickCommand = BindingCommand<Any>().observe {
-//        ToastUtils.showShort("点到我了")
-//    }
-//    var swichCommand = BindingCommand<Boolean>().observeWithParam {
-//        ToastUtils.showShort("开关$it")
-//    }
-//    var checkCommand = BindingCommand<Boolean>().observeWithParam {
-//        ToastUtils.showShort("选中$it")
-//    }
     var clickCommand: () -> Unit = {
         ToastUtils.showShort("点到我了")
     }
@@ -42,6 +32,6 @@ class BindingViewModel : BaseViewModel() {
         iKeyAndValues.add(CityInfo("美国", "122"))
         iKeyAndValues.add(CityInfo("日本", "133"))
         iKeyAndValues.add(CityInfo("英国", "143"))
-        data.setValue(iKeyAndValues)
+        data.value = iKeyAndValues
     }
 }

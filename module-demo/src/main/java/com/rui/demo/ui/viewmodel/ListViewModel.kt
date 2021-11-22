@@ -57,7 +57,7 @@ class ListViewModel : BaseViewModel() {
         list2.add(JokeInfo("测试一下", "小明"))
         list2.add(JokeInfo("测试一下", "小明"))
         list2.add(JokeInfo("测试一下", "小明"))
-        grideAdapter.setNewInstance(list2)
+        gridAdapter.setNewInstance(list2)
         val list3: MutableList<JokeInfo> = ArrayList()
         list3.add(JokeInfo("测试一下", "小明"))
         list3.add(JokeInfo("测试一下", "小明"))
@@ -81,43 +81,53 @@ class ListViewModel : BaseViewModel() {
         staggeredAdapter.setNewInstance(list3)
     }
 
-    var lineAdapter = object :
-        DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
-        override fun convertItem(
-            holder: BaseViewHolder,
-            binding: TestLayoutItemJokeBinding?,
-            item: JokeInfo
-        ) {
-            binding!!.entity = item
-        }
-    }
-    var grideAdapter = object :
-        DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
-        override fun convertItem(
-            holder: BaseViewHolder,
-            binding: TestLayoutItemJokeBinding?,
-            item: JokeInfo
-        ) {
-            binding!!.entity = item
-        }
-    }
-    var staggeredAdapter= object :
-        DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
-        override fun convertItem(
-            holder: BaseViewHolder,
-            binding: TestLayoutItemJokeBinding?,
-            item: JokeInfo
-        ) {
-            binding!!.entity = item
-            val layoutParams = binding.llParent.layoutParams as LinearLayout.LayoutParams
-            if (holder.adapterPosition % 3 == 0) {
-                layoutParams.height = sp2px(context, 60f)
-            } else if (holder.adapterPosition % 3 == 1) {
-                layoutParams.height = sp2px(context, 80f)
-            } else {
-                layoutParams.height = sp2px(context, 100f)
+    val lineAdapter by lazy {
+        object :
+            DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
+            override fun convertItem(
+                holder: BaseViewHolder,
+                binding: TestLayoutItemJokeBinding?,
+                item: JokeInfo
+            ) {
+                binding!!.entity = item
             }
-            binding.llParent.layoutParams = layoutParams
+        }
+    }
+    val gridAdapter by lazy {
+        object :
+            DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
+            override fun convertItem(
+                holder: BaseViewHolder,
+                binding: TestLayoutItemJokeBinding?,
+                item: JokeInfo
+            ) {
+                binding!!.entity = item
+            }
+        }
+    }
+    val staggeredAdapter by lazy {
+        object :
+            DataBindingAdapter<JokeInfo, TestLayoutItemJokeBinding>(R.layout.test_layout_item_joke) {
+            override fun convertItem(
+                holder: BaseViewHolder,
+                binding: TestLayoutItemJokeBinding?,
+                item: JokeInfo
+            ) {
+                binding!!.entity = item
+                val layoutParams = binding.llParent.layoutParams as LinearLayout.LayoutParams
+                when (holder.bindingAdapterPosition % 3) {
+                    0 -> {
+                        layoutParams.height = sp2px(context, 60f)
+                    }
+                    1 -> {
+                        layoutParams.height = sp2px(context, 80f)
+                    }
+                    else -> {
+                        layoutParams.height = sp2px(context, 100f)
+                    }
+                }
+                binding.llParent.layoutParams = layoutParams
+            }
         }
     }
 

@@ -63,7 +63,7 @@
                 android:visibility="@{viewModel.type==1?View.VISIBLE:View.GONE}" />
 
             <androidx.recyclerview.widget.RecyclerView
-                bindAdapter="@{viewModel.grideAdapter}"
+                bindAdapter="@{viewModel.gridAdapter}"
                 layoutManager="@{LayoutManagers.grid(3)}"
                 lineManager="@{LineManagers.divider(@color/divider,10)}"
                 setNestedScrollingEnabled="@{false}"
