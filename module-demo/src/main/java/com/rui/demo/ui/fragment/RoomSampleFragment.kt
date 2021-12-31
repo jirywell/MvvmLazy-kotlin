@@ -17,7 +17,7 @@ import java.util.*
  * 实现Room数据的基本操作
  * zjr
  */
-class RoomSampleFragment : BaseVmDbFragment<RoomSampleViewModel,TestFragmentRoomBinding>() {
+class RoomSampleFragment : BaseVmDbFragment<RoomSampleViewModel, TestFragmentRoomBinding>() {
     var personList: MutableList<Person> = ArrayList()
     override fun initContentView(
         inflater: LayoutInflater?,
@@ -37,7 +37,7 @@ class RoomSampleFragment : BaseVmDbFragment<RoomSampleViewModel,TestFragmentRoom
 
     override fun initViewObservable() {
         super.initViewObservable()
-        viewModel!!.allWordsLive.observe(this, { words: List<Person> ->
+        viewModel.allWordsLive.observe(this, { words: List<Person> ->
             personList.clear()
             personList.addAll(words)
             val text = StringBuilder()
@@ -46,23 +46,23 @@ class RoomSampleFragment : BaseVmDbFragment<RoomSampleViewModel,TestFragmentRoom
                 text.append(person.id).append(":").append(person.name).append("  ")
                     .append(person.age).append("\n")
             }
-            binding!!.textView.text = text.toString()
+            binding.textView.text = text.toString()
         })
-        binding!!.buttonInsert.setOnClickListener { v: View? ->
+        binding.buttonInsert.setOnClickListener { v: View? ->
             val person = Person("大壮", "11")
-            viewModel!!.insertWords(person)
+            viewModel.insertWords(person)
         }
-        binding!!.buttonClear.setOnClickListener { v: View? -> viewModel!!.deleteAllWords() }
-        binding!!.buttonUpdate.setOnClickListener { v: View? ->
+        binding.buttonClear.setOnClickListener { v: View? -> viewModel.deleteAllWords() }
+        binding.buttonUpdate.setOnClickListener { v: View? ->
             for (person in personList) {
                 person.name = person.name + "更新"
                 person.age = (person.age.toInt() + 1).toString()
-                viewModel!!.updateWords(person)
+                viewModel.updateWords(person)
             }
         }
-        binding!!.buttonDelete.setOnClickListener { v: View? ->
+        binding.buttonDelete.setOnClickListener { v: View? ->
             if (personList.size > 0) {
-                viewModel!!.deleteWords(personList[0])
+                viewModel.deleteWords(personList[0])
             }
         }
     }

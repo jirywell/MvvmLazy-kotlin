@@ -1,5 +1,6 @@
 package com.rui.demo.data
 
+import android.os.Looper
 import androidx.lifecycle.LiveData
 import com.rui.base.entity.ApiResponse
 import com.rui.base.network.RetrofitClient
@@ -47,8 +48,8 @@ class DiscoverRepository : BaseModel(), HttpDataSource, LocalDataSource {
         mLocalDataSource.deleteWords(*words)
     }
 
-    override fun deleteAllWords(vararg words: Person) {
-        mLocalDataSource.deleteAllWords(*words)
+    override fun deleteAllWords() {
+        mLocalDataSource.deleteAllWords()
     }
 
     override fun getAllWordsLive(): LiveData<List<Person>> {

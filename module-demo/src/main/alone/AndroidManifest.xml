@@ -17,13 +17,13 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <!--   <activity android:name=".ui.activity.LiveHomeActivity">
+        <activity android:name="com.rui.demo.ui.activity.TestActivity">
                <intent-filter>
                    <action android:name="android.intent.action.MAIN" />
 
                    <category android:name="android.intent.category.LAUNCHER" />
                </intent-filter>
-           </activity>-->
+           </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

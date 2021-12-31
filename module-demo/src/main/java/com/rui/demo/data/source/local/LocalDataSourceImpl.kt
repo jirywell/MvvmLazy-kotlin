@@ -1,6 +1,5 @@
 package com.rui.demo.data.source.local
 
-import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 import com.rui.demo.data.source.LocalDataSource
 import com.rui.demo.data.source.local.db.Person
@@ -19,55 +18,23 @@ class LocalDataSourceImpl : LocalDataSource {
 
 
     override fun insertWords(vararg words: Person) {
-        InsertAsyncTask(wordDao).execute(*words)
+        wordDao.insertWords(*words)
     }
 
     override fun updateWords(vararg words: Person) {
-        UpdateAsyncTask(wordDao).execute(*words)
+        wordDao.updateWords(*words)
     }
 
     override fun deleteWords(vararg words: Person) {
-        DeleteAsyncTask(wordDao).execute(*words)
+        wordDao.deleteWords(*words)
     }
 
-    override fun deleteAllWords(vararg words: Person) {
-        DeleteAllAsyncTask(wordDao).execute()
+    override fun deleteAllWords() {
+        wordDao.deleteAllWords()
     }
 
     override fun getAllWordsLive(): LiveData<List<Person>> {
         return wordDao.allWordsLive
-    }
-
-    internal class InsertAsyncTask(private val wordDao: PersonDao) :
-        AsyncTask<Person?, Void?, Void?>() {
-        override fun doInBackground(vararg words: Person?): Void? {
-            wordDao.insertWords(*words)
-            return null
-        }
-    }
-
-    internal class UpdateAsyncTask(private val wordDao: PersonDao) :
-        AsyncTask<Person?, Void?, Void?>() {
-        override fun doInBackground(vararg words: Person?): Void? {
-            wordDao.updateWords(*words)
-            return null
-        }
-    }
-
-    internal class DeleteAsyncTask(private val wordDao: PersonDao) :
-        AsyncTask<Person?, Void?, Void?>() {
-        override fun doInBackground(vararg words: Person?): Void? {
-            wordDao.deleteWords(*words)
-            return null
-        }
-    }
-
-    internal class DeleteAllAsyncTask(private val wordDao: PersonDao) :
-        AsyncTask<Void?, Void?, Void?>() {
-        override fun doInBackground(vararg params: Void?): Void? {
-            wordDao.deleteAllWords()
-            return null
-        }
     }
 
 }

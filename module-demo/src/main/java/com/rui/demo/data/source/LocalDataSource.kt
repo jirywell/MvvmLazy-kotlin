@@ -10,6 +10,6 @@ interface LocalDataSource {
     fun insertWords(vararg words: Person)
     fun updateWords(vararg words: Person)
     fun deleteWords(vararg words: Person)
-    fun deleteAllWords(vararg words: Person)
+    fun deleteAllWords()
     fun getAllWordsLive(): LiveData<List<Person>>
 }
