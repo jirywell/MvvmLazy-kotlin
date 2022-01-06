@@ -3,7 +3,7 @@
 # MvvmLazy Android懒人框架(kotlin版)
 目前，android流行的MVC、MVP模式的开发框架很多，然而一款基于MVVM模式开发框架却很少。 
 个人搜寻了市面上大量的开源框架,秉承减少重复造轮子的原则,汲取了各位大神的框架优点,集成了大量常用的开源框架和工具类,进行了部分公用模块封装,丰富了BindingAdapter自定义数据绑定,创建了这套Android懒人开发框架,已在多个商业项目中经过检验,可靠性值得信赖.  
-**MvvmLazy是以谷歌DataBinding+LiveData+ViewModel框架为基础，整合Okhttp+协程+Retrofit+Glide等流行模块，加上各种原生控件自定义的BindingAdapter，让事件与数据源完美绑定的一款容易上瘾的实用性MVVM快速开发框架**。从此告别findViewById()，告别setText()，告别setOnClickListener()...  
+**MvvmLazy是以谷歌DataBinding+LiveData+ViewModel框架为基础，整合Okhttp+协程+Retrofit+Coil等流行模块，加上各种原生控件自定义的BindingAdapter，让事件与数据源完美绑定的一款容易上瘾的实用性MVVM快速开发框架**。从此告别findViewById()，告别setText()，告别setOnClickListener()...  
 
 [**java版本**](https://github.com/jirywell/MvvmLazy)
 
