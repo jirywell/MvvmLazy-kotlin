@@ -25,8 +25,6 @@ abstract class BaseVmDbFragment<VM : BaseViewModel, V : ViewDataBinding> : BaseV
             false
         )
         binding.setVariable(viewModelId, viewModel)
-        //让ViewModel拥有View的生命周期感应
-        lifecycle.addObserver(viewModel)
         binding.lifecycleOwner = this
         return binding.root
     }
