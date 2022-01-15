@@ -3,7 +3,7 @@
 # MvvmLazy Android懒人框架(kotlin版)
 目前，android流行的MVC、MVP模式的开发框架很多，然而一款基于MVVM模式开发框架却很少。 
 个人搜寻了市面上大量的开源框架,秉承减少重复造轮子的原则,汲取了各位大神的框架优点,集成了大量常用的开源框架和工具类,进行了部分公用模块封装,丰富了BindingAdapter自定义数据绑定,创建了这套Android懒人开发框架,已在多个商业项目中经过检验,可靠性值得信赖.  
-**MvvmLazy是以谷歌DataBinding+LiveData+ViewModel框架为基础，整合Okhttp+协程+Retrofit+Glide等流行模块，加上各种原生控件自定义的BindingAdapter，让事件与数据源完美绑定的一款容易上瘾的实用性MVVM快速开发框架**。从此告别findViewById()，告别setText()，告别setOnClickListener()...  
+**MvvmLazy是以谷歌DataBinding+LiveData+ViewModel框架为基础，整合Okhttp+协程+Retrofit+Coil等流行模块，加上各种原生控件自定义的BindingAdapter，让事件与数据源完美绑定的一款容易上瘾的实用性MVVM快速开发框架**。从此告别findViewById()，告别setText()，告别setOnClickListener()...  
 
 [**java版本**](https://github.com/jirywell/MvvmLazy)
 
@@ -471,7 +471,7 @@ var okHttpClient = OkHttpClient.Builder()
 
 **注意：** 这里的网络异常code，并非是与服务端协议约定的code。网络异常可以分为两部分，一部分是协议异常，即出现code = 404、500等，属于HttpException，另一部分为请求异常，即出现：连接超时、解析错误、证书验证失等。而与服务端约定的code规则，它不属于网络异常，它是属于一种业务异常。在请求中可以使用RxJava的filter(过滤器)，也可以自定义BaseSubscriber统一处理网络请求的业务逻辑异常。由于每个公司的业务协议不一样，所以具体需要你自己来处理该类异常。
 ## 3、辅助功能
-> 一个完整的快速开发框架，当然也少不了常用的辅助类。下面来介绍一下**MVVMabit**中有哪些辅助功能。
+> 一个完整的快速开发框架，当然也少不了常用的辅助类。下面来介绍一下**MVVLazy**中有哪些辅助功能。
 ### 3.1、事件总线
 > 事件总线存在的优点想必大家都很清楚了，android自带的广播机制对于组件间的通信而言，使用非常繁琐，通信组件彼此之间的订阅和发布的耦合也比较严重，特别是对于事件的定义，广播机制局限于序列化的类（通过Intent传递），不够灵活。
 #### 3.3.1、LiveEventBus
