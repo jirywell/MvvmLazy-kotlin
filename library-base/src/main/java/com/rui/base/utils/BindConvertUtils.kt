@@ -8,7 +8,7 @@ import java.text.ParseException
 /**
  *
  *
-1 * *******************************
+ * *******************************
  * *@Author
  * *date ：
  * *description:bind数据转换工具类

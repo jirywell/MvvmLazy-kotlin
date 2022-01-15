@@ -11,11 +11,15 @@ import com.fondesa.recyclerviewdivider.staggeredDividerBuilder
  */
 object LineManagers {
     //瀑布流分割线
-    //瀑布流分割线
+    @JvmStatic
+    fun staggeredDivider(): LineManagerFactory {
+        return staggeredDivider(Color.parseColor("#E6E6E6"), 1)
+    }
+
     @JvmStatic
     fun staggeredDivider(
-        color: Int = Color.parseColor("#E6E6E6"),
-        size: Int = 1
+        color: Int,
+        size: Int
     ): LineManagerFactory {
         return object : LineManagerFactory {
             override fun create(recyclerView: RecyclerView) {
@@ -31,7 +35,12 @@ object LineManagers {
 
     //线型分割线 ,Grid分割线
     @JvmStatic
-    fun divider(color: Int = Color.parseColor("#E6E6E6"), size: Int = 1): LineManagerFactory {
+    fun divider(): LineManagerFactory {
+        return divider(Color.parseColor("#E6E6E6"), 1)
+    }
+
+    @JvmStatic
+    fun divider(color: Int, size: Int): LineManagerFactory {
         return object : LineManagerFactory {
             override fun create(recyclerView: RecyclerView) {
                 recyclerView.context.dividerBuilder()

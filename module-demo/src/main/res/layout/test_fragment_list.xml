@@ -57,7 +57,6 @@
                 bindAdapter="@{viewModel.lineAdapter}"
                 layoutManager="@{LayoutManagers.linear()}"
                 lineManager="@{LineManagers.divider(@color/divider,1)}"
-                setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="@{viewModel.type==1?View.VISIBLE:View.GONE}" />
@@ -66,7 +65,6 @@
                 bindAdapter="@{viewModel.gridAdapter}"
                 layoutManager="@{LayoutManagers.grid(3)}"
                 lineManager="@{LineManagers.divider(@color/divider,10)}"
-                setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="@{viewModel.type==2?View.VISIBLE:View.GONE}" />
@@ -76,7 +74,6 @@
                 bindAdapter="@{viewModel.staggeredAdapter}"
                 layoutManager="@{LayoutManagers.staggeredGrid(3,LayoutManagers.VERTICAL)}"
                 lineManager="@{LineManagers.staggeredDivider(@color/divider,10)}"
-                setNestedScrollingEnabled="@{false}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="@{viewModel.type==3?View.VISIBLE:View.GONE}" />

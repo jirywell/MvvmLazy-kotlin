@@ -17,6 +17,7 @@ ext {
             "navigation_version": "2.3.5",
             "room_version"      : "2.3.0",
             "retrofit_version"  : "2.9.0",
+            "compose_version"   : "1.0.4",
     ]
 
     //support配置
@@ -37,7 +38,11 @@ ext {
             //room
             "room"                : "androidx.room:room-runtime:${versions["room_version"]}",
             "room-ktx"            : "androidx.room:room-ktx:${versions["room_version"]}",
-            "room-compiler"       : "androidx.room:room-compiler:${versions["room_version"]}"
+            "room-compiler"       : "androidx.room:room-compiler:${versions["room_version"]}",
+            //compose
+            "compose-ui"          : "androidx.compose.ui:ui:${versions["compose_version"]}",
+            "compose-material"    : "androidx.compose.material:material:${versions["compose_version"]}",
+            "compose-preview"     : "androidx.compose.ui:ui-tooling-preview:${versions["compose_version"]}"
     ]
 
     //依赖第三方配置
@@ -45,15 +50,6 @@ ext {
             //阿里路由框架
             "arouter-api"                  : "com.alibaba:arouter-api:1.5.1",
             "arouter-compiler"             : "com.alibaba:arouter-compiler:1.5.1",
-            //rxjava
-            "rxjava"                       : "io.reactivex.rxjava3:rxjava:3.0.13",
-            "rxandroid"                    : "io.reactivex.rxjava3:rxandroid:3.0.0",
-            "rxKotlin"                     : "io.reactivex.rxjava3:rxkotlin:3.0.1",
-            //rx系列与View生命周期同步
-            "rxlifecycle"                  : "com.trello.rxlifecycle4:rxlifecycle:4.0.2",
-            "rxlifecycle-components"       : "com.trello.rxlifecycle4:rxlifecycle-components:4.0.2",
-            //rxbinding
-            "rxbinding"                    : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
             // 6.0权限请求
             "permissionx"                  : "com.guolindev.permissionx:permissionx:1.6.0",
             //万能adapter适配器

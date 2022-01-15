@@ -32,10 +32,10 @@ class BtmTabFragment : BaseVmDbFragment<BtmTabViewModel,TestFragmentBtmtabBindin
     override fun initData() {
         super.initData()
         val list: MutableList<Fragment> = ArrayList()
-        list.add(TabBar1Fragment.Companion.newInstance())
-        list.add(TabBar2Fragment.Companion.newInstance())
-        list.add(TabBar3Fragment.Companion.newInstance())
-        list.add(TabBar4Fragment.Companion.newInstance())
+        list.add(TabBar1Fragment.newInstance())
+        list.add(TabBar2Fragment.newInstance())
+        list.add(TabBar3Fragment.newInstance())
+        list.add(TabBar4Fragment.newInstance())
         binding.tabLayout.configTabLayoutConfig {
             onSelectIndexChange = { fromIndex, selectIndexList, reselect, fromUser ->
                 val toIndex = selectIndexList[0]

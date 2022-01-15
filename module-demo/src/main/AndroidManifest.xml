@@ -4,16 +4,16 @@
     package="com.rui.demo">
 
     <application>
-        <activity android:name="com.rui.demo.ui.activity.TestActivity">
+        <activity android:name=".ui.activity.TestActivity" />
 
-        </activity>
         <provider
-            tools:replace="android:authorities"
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
-            tools:node="merge">
-            <meta-data  android:name="com.rui.demo.DemoModuleInit"
+            tools:node="merge"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="com.rui.demo.DemoModuleInit"
                 android:value="androidx.startup" />
         </provider>
     </application>

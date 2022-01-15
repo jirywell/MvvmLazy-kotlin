@@ -35,7 +35,7 @@ abstract class BasePaginationViewModel<T> :
     var pageIndex = 1
     val pageSize = 10
     abstract val adapter: BaseQuickAdapter<T, BaseViewHolder>?
-    abstract val dateListType: ListType?
+    abstract val dateListType: ListType
     var mAdapter: BaseQuickAdapter<T, BaseViewHolder>? = null
 
     /**

@@ -97,3 +97,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+configurations.all() {
+    Configuration configuration ->
+        configuration.resolutionStrategy.force(rootProject.ext.android_x.multidex)
+        configuration.resolutionStrategy.force(rootProject.ext.android_x["appcompat"])
+        configuration.resolutionStrategy.force(rootProject.ext.android_x["ktx"])
+        configuration.resolutionStrategy.force(rootProject.ext.android_x["material"])
+        configuration.resolutionStrategy.force(rootProject.ext.android_x["startup"])
+}
