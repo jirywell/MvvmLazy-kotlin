@@ -329,7 +329,7 @@ class MultiStateView
         ObjectAnimator.ofFloat(previousView, "alpha", 1.0f, 0.0f).apply {
             duration = 250L
             addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator?) {
+                override fun onAnimationStart(animation: Animator) {
                     previousView.visibility = View.VISIBLE
                 }
 

@@ -20,56 +20,44 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    //加载动画框架
-    api 'com.wang.avi:library:2.1.3'
-    //banner框架
-    api 'com.youth.banner:banner:2.1.0'
-    //功能扩展控件,替代shap,selecore
-    api 'com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.3'
-    //TabLayout框架
-    api 'com.github.angcyo.DslTablayout:TabLayout:2.0.2'
-    api 'com.github.angcyo.DslTablayout:ViewPager1Delegate:2.0.2'
-    api 'com.github.angcyo.DslTablayout:ViewPager2Delegate:2.0.2'
 
-    //dialog框架
-    api 'com.github.li-xiaojun:XPopup:2.5.4'
     //沉浸式框架
-    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    api 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+// kotlin扩展（可选）
+    api 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
     //通用标题栏
     api 'com.github.getActivity:TitleBar:8.6'
     //万能分割线
     api 'com.github.fondesa:recycler-view-divider:3.5.0'
     // 上拉加载，下拉刷新
-    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
-    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
-    api "org.jetbrains.anko:anko:$anko_version"
-    api rootProject.ext.dependencies["permissionx"]
+    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'      //核心必须依赖
+    api 'io.github.scwang90:refresh-header-classics:2.0.5'    //经典刷新头
+    api "org.jetbrains.anko:anko:0.10.8"
+    //dialog框架
+    api 'com.github.li-xiaojun:XPopup:2.8.12'
+    api 'com.github.li-xiaojun:XPopupExt:0.0.7'
     api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
-    api rootProject.ext.dependencies["liveEventBus"]
-    api rootProject.ext.dependencies["customactivityoncrash"]
     //android_x
-    api rootProject.ext.android_x.multidex
+    api rootProject.ext.android_x["multidex"]
     api rootProject.ext.android_x["appcompat"]
     api rootProject.ext.android_x["ktx"]
     api rootProject.ext.android_x["material"]
-    api rootProject.ext.android_x["navigation"]
-    api rootProject.ext.android_x["navigation-fg-ktx"]
-    api rootProject.ext.android_x["navigation-ui"]
     api rootProject.ext.android_x["navigation-ktx"]
+    api rootProject.ext.android_x["navigation-ui-ktx"]
     api rootProject.ext.android_x["startup"]
     //room
     api rootProject.ext.android_x["room"]
     api rootProject.ext.android_x["room-ktx"]
 
     //network
-    api rootProject.ext.dependencies.okhttp
-    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["retrofit"]
 
     api rootProject.ext.dependencies["converter-gson"]
     //json解析
-    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies["gson"]
     //coil图片加载库
-    api(rootProject.ext.dependencies.coil)
+    api rootProject.ext.dependencies["coil"]
     //Google LiveData和ViewModel组件
     api rootProject.ext.android_x["lifecycle-extensions"]
     kapt rootProject.ext.android_x["lifecycle-compiler"]

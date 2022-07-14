@@ -51,16 +51,34 @@ dependencies {
     // 图片、视频选择器
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.0'
 
-    api 'com.github.li-xiaojun:XPopupExt:0.0.7'
+
     //城市选择
     api 'liji.library.dev:citypickerview:5.2.4'
 
     api 'com.google.android:flexbox:2.0.1'
     // 评价 图标
     api 'me.zhanghai.android.materialratingbar:library:1.4.0'
-    //图表
-    api 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //TabLayout框架
+    api('com.github.angcyo.DslTablayout:TabLayout:3.2.1') {
+        exclude group: "androidx.core", module: "core"
+    }
+    api('com.github.angcyo.DslTablayout:ViewPager1Delegate:3.2.1') {
+        exclude group: "androidx.core", module: "core"
+    }
+    api('com.github.angcyo.DslTablayout:ViewPager2Delegate:3.2.1') {
+        exclude group: "androidx.core", module: "core"
+    }
+    //banner框架
+    api 'com.youth.banner:banner:2.1.0'
+    //功能扩展控件,替代shap,selecore
+    api 'com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.3'
+
+
 //倒计时控件
     api 'com.github.iwgang:countdownview:2.1.6'
+    api rootProject.ext.dependencies["permissionx"]
 
+    api rootProject.ext.dependencies["customactivityoncrash"]
+
+    api rootProject.ext.dependencies["liveEventBus"]
 }
